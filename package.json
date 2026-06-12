@@ -1,0 +1,31 @@
+{
+  "name": "long-video-transcriber",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "description": "Browser-local long-video transcription spike for private RU+EN transcript and subtitle package experiments.",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "node --test test/*.test.mjs",
+    "check": "npm test && npm run build"
+  },
+  "keywords": [
+    "transcription",
+    "subtitles",
+    "srt",
+    "vtt",
+    "browser-local",
+    "asr",
+    "whisper"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@huggingface/transformers": "4.2.0",
+    "@vitejs/plugin-vue": "6.0.7",
+    "vite": "8.0.16",
+    "vue": "3.5.38"
+  },
+  "devDependencies": {}
+}
