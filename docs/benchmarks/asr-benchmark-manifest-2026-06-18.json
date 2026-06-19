@@ -1,0 +1,116 @@
+{
+  "version": 1,
+  "updatedAt": "2026-06-18",
+  "product": "Long Video Transcriber",
+  "purpose": "Decide whether browser-only ASR is a product path or only a technical demo.",
+  "decisionGate": {
+    "browserOnlyStaysIf": [
+      "A 60-minute RU, EN, and mixed RU+EN real-speech sample completes on a recommended desktop browser without source media upload.",
+      "The selected path can resume from the first incomplete chunk after reload or interruption.",
+      "The transcript package exports transcript.md, transcript.txt, subtitles.srt, subtitles.vtt, and qa-notes.md.",
+      "Median quality score is at least 12/20 and subtitle usefulness score is at least 12/20.",
+      "The app can honestly classify the device as recommended, slow-but-usable, limited, or unsupported before long processing starts."
+    ],
+    "localHelperSpikeStartsIf": [
+      "Browser-only ASR fails 60-minute completion on normal recommended machines.",
+      "Model downloads, memory use, or WebGPU/WASM support make browser UX brittle.",
+      "The best browser path is materially slower than local MLX/faster-whisper/WhisperKit on the same source files.",
+      "Users need privacy but accept a local helper more readily than a cloud upload."
+    ],
+    "hostedAsrIsOnly": "benchmark_oracle_or_explicit_opt_in_mode_before_privacy_positioning_changes"
+  },
+  "adaptersUnderTest": [
+    {
+      "id": "transformers-whisper-large-v3-turbo",
+      "lane": "browser-baseline",
+      "runtime": "Transformers.js",
+      "required": true
+    },
+    {
+      "id": "sherpa-parakeet-v3-int8",
+      "lane": "browser-or-local-helper-candidate",
+      "runtime": "sherpa-onnx",
+      "required": true
+    },
+    {
+      "id": "sherpa-gigaam-russian",
+      "lane": "ru-quality-research",
+      "runtime": "sherpa-onnx",
+      "required": true
+    },
+    {
+      "id": "whisper-cpp-wasm",
+      "lane": "compatibility-fallback",
+      "runtime": "whisper.cpp/WASM",
+      "required": false
+    },
+    {
+      "id": "local-mlx-or-faster-whisper",
+      "lane": "local-helper-contingency",
+      "runtime": "local helper",
+      "required": false
+    },
+    {
+      "id": "hosted-asr-oracle",
+      "lane": "quality-cost-oracle",
+      "runtime": "external API",
+      "required": false
+    }
+  ],
+  "sampleMatrix": [
+    { "id": "ru-5m", "language": "ru", "durationBucket": "5m", "requiredForP1Benchmark": true },
+    { "id": "en-5m", "language": "en", "durationBucket": "5m", "requiredForP1Benchmark": true },
+    { "id": "mixed-5m", "language": "mixed-ru-en", "durationBucket": "5m", "requiredForP1Benchmark": true },
+    { "id": "ru-30m", "language": "ru", "durationBucket": "30m", "requiredForP1Benchmark": true },
+    { "id": "en-30m", "language": "en", "durationBucket": "30m", "requiredForP1Benchmark": true },
+    { "id": "mixed-30m", "language": "mixed-ru-en", "durationBucket": "30m", "requiredForP1Benchmark": true },
+    { "id": "ru-60m", "language": "ru", "durationBucket": "60m", "requiredForP1Benchmark": true },
+    { "id": "en-60m", "language": "en", "durationBucket": "60m", "requiredForP1Benchmark": true },
+    { "id": "mixed-60m", "language": "mixed-ru-en", "durationBucket": "60m", "requiredForP1Benchmark": true }
+  ],
+  "requiredMetrics": [
+    "adapterId",
+    "modelVersion",
+    "runtime",
+    "browser",
+    "hardwareLane",
+    "durationSeconds",
+    "fileType",
+    "modelDownloadBytes",
+    "modelLoadSeconds",
+    "realTimeFactor",
+    "peakMemoryNotes",
+    "storageEstimateBefore",
+    "storageEstimateAfter",
+    "chunkCount",
+    "completedChunkCount",
+    "failedChunkCount",
+    "reloadResumeResult",
+    "transcriptQualityScore20",
+    "subtitleUsefulnessScore20",
+    "exportedFiles",
+    "failureCode",
+    "humanNotes"
+  ],
+  "requiredExportFiles": [
+    "transcript.md",
+    "transcript.txt",
+    "subtitles.srt",
+    "subtitles.vtt",
+    "qa-notes.md"
+  ],
+  "failureCodes": [
+    "model_download_failed",
+    "model_load_failed",
+    "unsupported_codec",
+    "decode_failed",
+    "out_of_memory",
+    "tab_crash_or_killed",
+    "chunk_failed",
+    "resume_failed",
+    "export_failed",
+    "quality_below_gate",
+    "subtitle_below_gate",
+    "privacy_boundary_failed"
+  ]
+}

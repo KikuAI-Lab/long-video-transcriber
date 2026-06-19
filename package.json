@@ -9,7 +9,10 @@
     "build": "vite build",
     "preview": "vite preview --host 127.0.0.1",
     "test": "node --test test/*.test.mjs",
-    "check": "npm test && npm run build"
+    "check": "npm test && npm run build",
+    "check:benchmark-readiness": "node --test test/asr-benchmark-manifest.test.mjs test/asr-benchmark-corpus.test.mjs test/asr-benchmark-ledger.test.mjs",
+    "check:benchmark-run-plan": "node --test test/asr-benchmark-manifest.test.mjs test/asr-benchmark-corpus.test.mjs test/asr-benchmark-ledger.test.mjs test/asr-benchmark-run-plan.test.mjs",
+    "check:benchmark-approval-packet": "node --test test/asr-benchmark-manifest.test.mjs test/asr-benchmark-corpus.test.mjs test/asr-benchmark-ledger.test.mjs test/asr-benchmark-run-plan.test.mjs test/asr-benchmark-approval-packet.test.mjs"
   },
   "keywords": [
     "transcription",

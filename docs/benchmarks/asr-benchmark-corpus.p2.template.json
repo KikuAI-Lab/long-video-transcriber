@@ -1,0 +1,121 @@
+{
+  "version": 1,
+  "updatedAt": "2026-06-18",
+  "product": "Long Video Transcriber",
+  "purpose": "P2 sanitized corpus readiness manifest for future ASR benchmark runs. This file intentionally stores no local paths, media URLs, raw transcripts or file names.",
+  "approvalPolicy": {
+    "realMediaMustRemain": "operator-local-not-committed",
+    "hostedRunsRequire": "explicit opt-in outside this manifest",
+    "noTranscriptTextInManifest": true
+  },
+  "samples": [
+    {
+      "id": "ru-5m",
+      "language": "ru",
+      "durationBucket": "5m",
+      "durationSecondsTarget": 300,
+      "consentStatus": "pending",
+      "storageBoundary": "operator-local-not-committed",
+      "sourceKind": "operator-owned-or-approved",
+      "transcriptOracleStatus": "pending",
+      "qualityRubricId": "asr-qa-v1",
+      "notes": "Pending approved real-speech sample and transcript oracle criteria."
+    },
+    {
+      "id": "en-5m",
+      "language": "en",
+      "durationBucket": "5m",
+      "durationSecondsTarget": 300,
+      "consentStatus": "pending",
+      "storageBoundary": "operator-local-not-committed",
+      "sourceKind": "operator-owned-or-approved",
+      "transcriptOracleStatus": "pending",
+      "qualityRubricId": "asr-qa-v1",
+      "notes": "Pending approved real-speech sample and transcript oracle criteria."
+    },
+    {
+      "id": "mixed-5m",
+      "language": "mixed-ru-en",
+      "durationBucket": "5m",
+      "durationSecondsTarget": 300,
+      "consentStatus": "pending",
+      "storageBoundary": "operator-local-not-committed",
+      "sourceKind": "operator-owned-or-approved",
+      "transcriptOracleStatus": "pending",
+      "qualityRubricId": "asr-qa-v1",
+      "notes": "Pending approved real-speech sample and transcript oracle criteria."
+    },
+    {
+      "id": "ru-30m",
+      "language": "ru",
+      "durationBucket": "30m",
+      "durationSecondsTarget": 1800,
+      "consentStatus": "pending",
+      "storageBoundary": "operator-local-not-committed",
+      "sourceKind": "operator-owned-or-approved",
+      "transcriptOracleStatus": "pending",
+      "qualityRubricId": "asr-qa-v1",
+      "notes": "Pending approved real-speech sample and transcript oracle criteria."
+    },
+    {
+      "id": "en-30m",
+      "language": "en",
+      "durationBucket": "30m",
+      "durationSecondsTarget": 1800,
+      "consentStatus": "pending",
+      "storageBoundary": "operator-local-not-committed",
+      "sourceKind": "operator-owned-or-approved",
+      "transcriptOracleStatus": "pending",
+      "qualityRubricId": "asr-qa-v1",
+      "notes": "Pending approved real-speech sample and transcript oracle criteria."
+    },
+    {
+      "id": "mixed-30m",
+      "language": "mixed-ru-en",
+      "durationBucket": "30m",
+      "durationSecondsTarget": 1800,
+      "consentStatus": "pending",
+      "storageBoundary": "operator-local-not-committed",
+      "sourceKind": "operator-owned-or-approved",
+      "transcriptOracleStatus": "pending",
+      "qualityRubricId": "asr-qa-v1",
+      "notes": "Pending approved real-speech sample and transcript oracle criteria."
+    },
+    {
+      "id": "ru-60m",
+      "language": "ru",
+      "durationBucket": "60m",
+      "durationSecondsTarget": 3600,
+      "consentStatus": "pending",
+      "storageBoundary": "operator-local-not-committed",
+      "sourceKind": "operator-owned-or-approved",
+      "transcriptOracleStatus": "pending",
+      "qualityRubricId": "asr-qa-v1",
+      "notes": "Pending approved real-speech sample and transcript oracle criteria."
+    },
+    {
+      "id": "en-60m",
+      "language": "en",
+      "durationBucket": "60m",
+      "durationSecondsTarget": 3600,
+      "consentStatus": "pending",
+      "storageBoundary": "operator-local-not-committed",
+      "sourceKind": "operator-owned-or-approved",
+      "transcriptOracleStatus": "pending",
+      "qualityRubricId": "asr-qa-v1",
+      "notes": "Pending approved real-speech sample and transcript oracle criteria."
+    },
+    {
+      "id": "mixed-60m",
+      "language": "mixed-ru-en",
+      "durationBucket": "60m",
+      "durationSecondsTarget": 3600,
+      "consentStatus": "pending",
+      "storageBoundary": "operator-local-not-committed",
+      "sourceKind": "operator-owned-or-approved",
+      "transcriptOracleStatus": "pending",
+      "qualityRubricId": "asr-qa-v1",
+      "notes": "Pending approved real-speech sample and transcript oracle criteria."
+    }
+  ]
+}
