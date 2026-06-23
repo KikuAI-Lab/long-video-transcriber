@@ -4,7 +4,15 @@ Long Video Transcriber is a browser-local experiment for private first-pass tran
 
 **[Open the product page](https://kikuai.dev/translator-ready-srt/)**
 
-[Run locally](#quickstart) · [Benchmark gate](#benchmark-gate) · [Privacy boundary](#privacy-boundary)
+[Docs](#current-scope) · [Examples](#quickstart) · [Benchmark gate](#benchmark-gate)
+
+Sample output package:
+
+```text
+transcript.md
+subtitles.srt
+qa-notes.md
+```
 
 The app accepts a user-owned audio or video file, decodes the audio in the browser, runs a local ASR adapter, checkpoints chunk progress locally, and exports a ZIP package:
 
