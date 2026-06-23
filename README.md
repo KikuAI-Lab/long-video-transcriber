@@ -6,6 +6,8 @@ Long Video Transcriber is a browser-local experiment for private first-pass tran
 
 [Docs](#current-scope) · [Examples](#quickstart) · [Benchmark gate](#benchmark-gate)
 
+![Long Video Transcriber browser-local transcript and subtitle export interface](docs/assets/readme-screenshot.png)
+
 Sample output package:
 
 ```text
