@@ -1,6 +1,10 @@
 # Long Video Transcriber
 
-Browser-local long-video transcription experiment for private first-pass transcripts and rough subtitle exports.
+Long Video Transcriber is a browser-local experiment for private first-pass transcripts and rough SRT/VTT export packages.
+
+**[Open the product page](https://kikuai.dev/translator-ready-srt/)**
+
+[Run locally](#quickstart) · [Benchmark gate](#benchmark-gate) · [Privacy boundary](#privacy-boundary)
 
 The app accepts a user-owned audio or video file, decodes the audio in the browser, runs a local ASR adapter, checkpoints chunk progress locally, and exports a ZIP package:
 
@@ -9,6 +13,24 @@ The app accepts a user-owned audio or video file, decodes the audio in the brows
 - `subtitles.srt`
 - `subtitles.vtt`
 - `qa-notes.md`
+
+## Quickstart
+
+```bash
+npm install
+npm test
+npm run build
+npm run dev
+```
+
+Open the Vite dev URL and choose a small local audio/video file for a smoke test. First model run can be slow because browser model assets need to download and initialize.
+
+Expected test result:
+
+```text
+# tests 25
+# pass 25
+```
 
 ## Current Scope
 
@@ -49,17 +71,6 @@ The product direction is RU+EN first. Current candidates are tracked in `src/lib
 - GigaAM Russian as the RU quality research lane.
 
 Model licenses and attribution must be reviewed before any paid packaging.
-
-## Development
-
-```bash
-npm install
-npm test
-npm run build
-npm run dev
-```
-
-Open the Vite dev URL and choose a small local audio/video file for a smoke test. First model run can be slow because browser model assets need to download and initialize.
 
 ## Benchmark Gate
 
